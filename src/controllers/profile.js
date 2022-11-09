@@ -1,3 +1,6 @@
+const path = require("path");
+const fs = require("fs");
+
 const Profile = require("../models/profile");
 
 const create_profile = async (req, res) => {
@@ -35,7 +38,13 @@ const delete_profile = async (req, res) => {
     const profile_id = req.params.id;
     const profile = await Profile.findByPk(profile_id);
     if (profile) {
+      // We need to also delete the resume file from system
+      const file_path = path.join(__dirname, "../uploads/" + profile.resume);
+      fs.unlink(file_path, function (err) {
+        if (err) res.status(404).send("Resume file not found");
+      });
       await profile.destroy();
+
       res.status(200).send("profile deleted");
     } else {
       res.status(404).send("profile not found");

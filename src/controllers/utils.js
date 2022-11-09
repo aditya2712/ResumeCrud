@@ -1,4 +1,4 @@
-var path = require("path");
+const path = require("path");
 
 const countries_json = require("../statics/countries.json");
 
