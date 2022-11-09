@@ -2,6 +2,7 @@
 
 ### Deployment
 The Frontend application is deployed on : https://unrivaled-brioche-8c72fd.netlify.app/
+
 The Backend application is deployed on : https://addictive-media-assignment-adi.herokuapp.com/api
 
 ### Technologies Used:
