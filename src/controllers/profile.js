@@ -41,7 +41,7 @@ const delete_profile = async (req, res) => {
       // We need to also delete the resume file from system
       const file_path = path.join(__dirname, "../uploads/" + profile.resume);
       fs.unlink(file_path, function (err) {
-        if (err) res.status(404).send("Resume file not found");
+        return ;
       });
       await profile.destroy();
 
