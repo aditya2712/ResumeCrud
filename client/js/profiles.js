@@ -1,5 +1,24 @@
 backend_base_url = config.backend_api_url;
 
+function deleteProfile(profile_id) {
+  var url = `${backend_base_url}/profile/delete/${profile_id}/`;
+
+  fetch(url, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      // Reload the table
+      getProfileData();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
 // fetch the profile data from the backend
 function getProfileData() {
   var url = `${backend_base_url}/profile/list/`;
@@ -21,6 +40,7 @@ function getProfileData() {
         var date_of_birth = document.createElement("td");
         var created_at = document.createElement("td");
         var resume = document.createElement("td");
+        var delete_btn = document.createElement("td");
 
         id.innerHTML = profile.id;
         id.id = `id-${profile.id}`;
@@ -45,12 +65,15 @@ function getProfileData() {
             resume.id = `resume-${profile.id}`;
           });
 
-        row.appendChild(id);
+        delete_btn.innerHTML = `<button class="btn btn-danger" onclick="deleteProfile(${profile.id})"><img width=18px src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"/></button>`;
+
+        // row.appendChild(id);
         row.appendChild(name);
         row.appendChild(country);
         row.appendChild(date_of_birth);
         row.appendChild(created_at);
         row.appendChild(resume);
+        row.appendChild(delete_btn);
 
         const profile_table = document.getElementById("profile-table");
         const tbody = profile_table.getElementsByTagName("tbody")[0];
