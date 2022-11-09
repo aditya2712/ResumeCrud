@@ -18,7 +18,7 @@ const create_profile = async (req, res) => {
 
     await new_profile.save();
 
-    res.status(201).send("profile Created");
+    res.status(201).json({ msg: "profile Created" });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -41,13 +41,13 @@ const delete_profile = async (req, res) => {
       // We need to also delete the resume file from system
       const file_path = path.join(__dirname, "../uploads/" + profile.resume);
       fs.unlink(file_path, function (err) {
-        return ;
+        return;
       });
       await profile.destroy();
 
-      res.status(200).send("profile deleted");
+      res.status(200).send({ msg: "profile deleted" });
     } else {
-      res.status(404).send("profile not found");
+      res.status(404).send({ msg: "profile not found" });
     }
   } catch (error) {
     res.status(500).send(error);
