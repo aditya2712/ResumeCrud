@@ -5,6 +5,7 @@ const Profile = require("../models/profile");
 
 const create_profile = async (req, res) => {
   try {
+    console.log(req.body);
     const { name, date_of_birth, country } = req.body;
     const resume_file_obj = req.file;
 

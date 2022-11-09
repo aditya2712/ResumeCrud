@@ -60,7 +60,7 @@ function getProfileData() {
           .then((response) => response.blob())
           .then((blob) => {
             var url = window.URL.createObjectURL(blob);
-            resume.innerHTML = `<a href=${resume_file} target="_blank">View Resume</a><br>
+            resume.innerHTML = `<a href=${backend_base_url}/utils/get_file/${profile.resume} target="_blank">View Resume</a><br>
 			<a href=${url} download>Download</a>`;
             resume.id = `resume-${profile.id}`;
           });

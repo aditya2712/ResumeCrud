@@ -23,9 +23,11 @@
       class="container px-4 py-3 d-flex flex-column align-items-center justify-content-center"
     >
       <form
+        id="profile_form"
         action="post"
         class="d-flex flex-column"
-        style="border: solid 1px black; padding: 4px; width: 400px"
+        style="border: solid 1px black; padding: 4px; width: 300px"
+        onsubmit="create_profile(event)"
       >
         <div class="form-group">
           <label for="nameInput">Name</label>
@@ -69,7 +71,7 @@
         <button
           style="width: fit-content; align-self: center; justify-self: center"
           type="submit"
-          class="btn btn-primary"
+          class="btn btn-success"
         >
           Submit
         </button>
@@ -79,6 +81,7 @@
       </a>
     </div>
 
+    <script src="./config.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
