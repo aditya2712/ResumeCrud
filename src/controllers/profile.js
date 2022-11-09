@@ -26,7 +26,6 @@ const create_profile = async (req, res) => {
 const get_profile_list = async (req, res) => {
   try {
     const profile_list = await Profile.findAll();
-    console.log(profile_list);
     res.status(200).send(profile_list);
   } catch (error) {
     res.status(500).send(error);

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Addictive Media Assignment</title>
+  </head>
+  <body>
+    <div class="container px-4 py-3">
+      <h1 class="text-center">Addictive Media Assignment</h1>
+      <a href="./profiles.html">
+        <button class="btn btn-primary">Profiles List</button>
+      </a>
+      <form action="post" class="">
+        <div class="form-group">
+          <label for="nameInput">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nameInput"
+            placeholder="Enter name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="inputDOB">Date of Birth</label>
+          <input
+            type="date"
+            class="form-control"
+            id="inputDOB"
+            placeholder="Date of Birth"
+          />
+        </div>
+        <div class="form-group">
+          <label for="inputFile" class="form-label">Upload Resume</label>
+          <input class="form-control" type="file" id="inputFile" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

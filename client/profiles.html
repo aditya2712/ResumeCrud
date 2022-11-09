@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Addictive Media Assignment</title>
+  </head>
+  <body>
+    <div class="container px-4 py-3">
+      <h1 class="text-center">Addictive Media Assignment</h1>
+      <!-- Table of profiles -->
+      <table class="table table-striped sortable" id="profile-table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Country</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Resume</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Script to fetch profiles from server -->
+    <script src="./config.js"></script>
+    <script src="./js/profiles.js"></script>
+  </body>
+</html>

@@ -14,6 +14,8 @@ const get_uploaded_file = async (req, res) => {
   try {
     const file_name = req.params.file_name;
     const file_path = path.join(__dirname, "../uploads/" + file_name);
+    // set content type to application/pdf
+    res.contentType("application/pdf");
     res.sendFile(file_path);
   } catch (error) {
     res.status(500).send(error);
