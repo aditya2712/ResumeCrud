@@ -1,6 +1,8 @@
+var path = require("path");
+
 const countries_json = require("../statics/countries.json");
 
-get_country_list = async (req, res) => {
+const get_country_list = async (req, res) => {
   try {
     res.json(countries_json);
   } catch (error) {
@@ -8,6 +10,17 @@ get_country_list = async (req, res) => {
   }
 };
 
+const get_uploaded_file = async (req, res) => {
+  try {
+    const file_name = req.params.file_name;
+    const file_path = path.join(__dirname, "../uploads/" + file_name);
+    res.sendFile(file_path);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
+
 module.exports = {
   get_country_list,
+  get_uploaded_file,
 };
